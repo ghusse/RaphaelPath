@@ -1,6 +1,9 @@
 Raphael path
 =============
 
+Copyright 2011 Guillaume Gautreau
+Licensed under the MIT license
+
 Utility for [RaphaelJS](http://raphaeljs.com), that helps to draw paths.
 
 Usage
@@ -19,6 +22,21 @@ Usage
 	// Draws the path
 	path.draw();
 
+Method calls
+------------
+
+RaphaelPath provides different equivalent ways of calling path commands
+
+	path.lineTo(10, 10)
+		.lineTo(20, 10)
+		.lineTo(20, 20);
+	
+	// Is equivalent to
+	path.lineTo(10, 10, 20, 10, 20, 20);
+	
+	// And to
+	path.lineTo([10, 10, 20, 10, 20, 20]);
+
 API documentation
 -----------------
 
@@ -33,3 +51,14 @@ API documentation
 	* returns the prepared path object
 * `path.toString()`
 	* returns the path command string. You could use it for instance by doing `paper.path(path.toString())`.
+
+### Commands
+* `path.moveTo(x,y)`
+* `path.lineTo(x,y)`
+* `path.close()`
+* `path.horizontal(x)`
+* `path.vertical(y)`
+* `path.curveTo(x1, y1, x2, y2, x, y)`
+* `path.sCurveTo(x2, y2, x, y)`
+* `path.qCurveTo(x1, y1, x, y)`
+* `path.arcTo(rx, ry, xAxisRotation, largeArcFlag, sweepFlag, x, y)`
